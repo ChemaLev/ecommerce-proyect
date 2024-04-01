@@ -1,0 +1,27 @@
+header {
+    height: 152px;
+    border: 1px solid red;
+}
+
+section {
+    height: 340px;
+    border: 1px solid purple;
+}
+
+main {
+    height: auto;
+    border: 1px solid blue;
+}
+
+footer {
+    min-height: 368px;
+    border: 1px solid #009145;
+}
+
+.container {
+    width: 1220px;
+    margin: 0 auto;
+    height: inherit;
+    min-height: inherit;
+    border: 1px solid springgreen;
+}
