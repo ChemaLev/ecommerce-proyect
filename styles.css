@@ -1,3 +1,29 @@
+:root {
+    --primary:  #ff3b3b;
+    --seconday: #7424a6;
+
+    --white: #ffffff;
+    --black: #373738;
+    --gray: #f0f0f0;
+    --green: #458f17;
+
+    --font-family: "Inter", sans-serif;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(./assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf)
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
 header {
     height: 152px;
     border: 1px solid red;
