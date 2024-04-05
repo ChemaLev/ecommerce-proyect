@@ -1,6 +1,6 @@
 :root {
     --primary:  #ff3b3b;
-    --seconday: #7424a6;
+    --secondary: #7424a6;
 
     --white: #ffffff;
     --black: #373738;
@@ -29,9 +29,64 @@ body {
 }
 
 header {
-    height: 152px;
-    border: 1px solid red;
+    padding: 20px;
+    background-color: var(--primary);
 }
+
+.header-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin: 20px 0;
+}
+
+.header-content .logo img {
+    display: block;
+}
+
+.header-content form {
+    text-align: center;
+}
+
+.header-content .form input {
+    height: 60px;
+    width: 80%;
+    border: none;
+    border-radius: 15px;  
+    font-size: 1rem;
+    text-align: center;
+    outline: 0;
+}
+
+.header-content .form input::placeholder {
+    font-size: 1rem;
+}
+
+.social ul {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.social li a {
+    color: var(--white);
+}
+
+.social li a .fa-icon{
+    font-size: 2rem;
+}
+
+.header-nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 40px 10px;
+}
+
+.header-nav ul li a{
+    font-weight: 600;
+    color: var(--white);
+}
+
 
 .container {
     display: flex;
@@ -41,7 +96,6 @@ header {
     margin: 0 auto;
     height: inherit;
     min-height: inherit;
-    border: 1px solid springgreen;
 }
 
 .container span.hero-item{
@@ -171,7 +225,42 @@ main {
 }  
 
 footer {
-    min-height: 368px;
+    height: auto;
     border: 1px solid #009145;
+    background-color: var(--secondary);
 }
 
+footer .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.columns-container {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.col-items li {
+    padding: 5px;
+}
+
+.col-items li a {
+    color: var(--white);
+}
+
+.col-items .col-main-item {
+    display: block;
+    padding-bottom: 20px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--gray);
+    color: var(--white);
+    font-weight: bold;
+}
