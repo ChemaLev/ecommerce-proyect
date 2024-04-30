@@ -1,0 +1,20 @@
+section .hero-item{
+    display: block;
+    text-align: left;
+    color: var(--white);
+    font-weight: 600;
+    line-height: .9;
+}
+
+section#hero .hero-titles {
+    align-items: start;
+    justify-content: center;
+} 
+
+section .hero-item:first-child {
+    font-size: 2.5rem;
+}
+
+section .hero-item:last-child {
+    font-size: 4rem;
+}

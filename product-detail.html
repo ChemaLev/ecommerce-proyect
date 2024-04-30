@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Virtual</title>
+
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://kit.fontawesome.com/38bf6ade61.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <!-- Estilos de la barra de navegación -->
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="./index.html"><img src="../assets/tiendamia-logo.svg" width="218" alt="Logo store" />
+                    </a>
+                </div>
+                <div class="form">
+                  <form>
+                    <input type="text" placeholder="Buscar" />
+                  </form>
+                </div>
+                <div class="social-media">
+                    <ul>
+                        <li><a href="#"><i class="fa-icon fa-brands fa-facebook"></i></a></i></li>
+                        <li><a href="#"><i class="fa-icon fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-icon fa-solid fa-cart-shopping"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="nav" class="header-nav">
+                <ul class="nav-list">
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Estilos del cuerpo y en particular de la tarjeta del producto -->
+    
+    <main>
+        
+        <div class="container">
+            <div class="product-detail">
+                <div class="product-images">
+                    <div class="product-images-secondary">
+                        <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="">
+                        <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="">
+                        <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="">
+                    </div>
+                    <div class="product-image-principal">
+                        <img class="product-image-full" src="./assets/img/mock1.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="product-information">
+                    <h4>Samsung</h4>
+                    <h3>SAMSUNG Galaxy S23 FE Cell Phone, 128GB, Unlocked Android Smartphone, Long Battery Life, Premium Processor, Tough Gorilla Glass Display, Hi-Res 50MP Camera, US Version, 2023, Graphite</h3>
+                    <span class="qualification">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        657 calificaciones
+                    </span>
+                    <ul>
+                        <li><b>Disponibilidad:</b>En stock</li>
+                        <li><b>Marca:</b>Samsung</li>
+                        <li><b>Peso con empaque:</b>0.500 kg</li>
+                        <li><b>Producto de:</b>Amazon</li>
+                        <li><b></b></li>
+                    </ul>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum culpa inventore, neque deserunt molestiae delectus aspernatur voluptas reprehenderit, enim magni dolore sapiente doloribus corrupti distinctio aliquam officiis rerum nam eos.
+                        Corporis quod autem doloribus voluptatem quos a, beatae ex illo sit eaque, deleniti ipsum magnam aliquam! Soluta incidunt eveniet autem tempora, asperiores laudantium officiis dolorem veniam voluptatem similique exercitationem voluptatum?
+                        Ad iusto ex sequi facilis maiores inventore voluptatum aperiam? Temporibus quo ad perferendis voluptate quae ullam illo neque nesciunt iusto veritatis? Sit eveniet minima esse! Itaque harum possimus quae magni?
+                    </p>
+                </div>
+
+                <div class="product-prices">
+                    <div class="product-list-prices">
+                        <p class="old-price">Precio: <span>S/. 3,202</span></p>
+                        <p class="current-price">Ahorras: S/ 267 (9%)</p>
+                        <p class="price">S/. 2,925</p>
+                    </div>
+                    <div class="product-shipment">
+                        <div class="product-shipment__detail">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <p><span>Agrega el producto al carrito</span> para conocer los costos de envío</p>
+                        </div>
+                        <div class="product-shipment__detail">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <p>Recibí este producto de 5 a 10 días hábiles seleccionando <span>envío</span></p>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <div class="quantity">
+                            <label for="quantityProduct">Cantidad:</label>
+                            <input type="number" id="quantityProduct" min="1" max="99" value="1" />
+                        </div>
+                        <div class="call">
+                            <button class="btn btn-primary">Comprar</button>
+                            <button class="btn btn-secondary">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Estilos del pie de página -->
+    <footer>
+        <div id="footer" class="container"></div>
+        <div class="copyright">Curso de Html + CSS 2024</div>
+    </footer>
+
+    <script src="./scripts/links.js"></script>
+
+</body>
+</html>

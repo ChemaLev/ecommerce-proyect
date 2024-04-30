@@ -1,0 +1,149 @@
+.product-detail {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+    padding: 25px 0;
+}
+
+.product-images {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.product-image-principal {
+    width: 90%;
+    display: block;
+}
+
+.product-images-secondary {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-image-full, .product-image-mini{
+    width: 100%;
+}
+
+.product-information h4 {
+    margin: 10px 0;
+    font-size: 12px;
+}
+
+.product-information h3 {
+    margin-bottom: 10px;
+    font-size: 19px;
+    font-weight: normal;
+}
+
+span.qualification {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.product-information ul {
+    margin-bottom: 10px;
+}
+
+.product-information ul li {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.product-information p {
+    margin-bottom: 5px;
+    line-height: 1.8;
+    font-size: 12px;
+}
+
+.product-prices {
+    background-color: var(--gray);
+    padding: 15px;
+    height: fit-content;
+}
+
+.product-list-prices {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.product-list-prices p {
+    margin-bottom: 5px;
+}
+
+.product-list-prices p span {
+    text-decoration: line-through;
+}
+
+.product-list-prices p.price {
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+.product-shipment__detail {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.product-shipment__detail i{
+    display: block;
+    padding-top: 4px;
+    color: var(--gray-dark);
+}
+
+.product-shipment__detail p span{
+    color: var(--gray-dark);
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.product-actions {
+    display: flex;
+    font-size: 12px;
+    width: 100%;
+}
+
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.quantity input {
+    width: 30px;
+    height: 30px;
+}
+
+.call {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.call .btn {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.call .btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.call .btn-secondary {
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
