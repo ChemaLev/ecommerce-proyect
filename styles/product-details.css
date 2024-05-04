@@ -136,6 +136,7 @@ span.qualification {
     border: 0;
     border-radius: 2px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .call .btn-primary {

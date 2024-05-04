@@ -24,7 +24,7 @@
                     <input type="text" placeholder="Buscar" />
                   </form>
                 </div>
-                <div class="social-media">
+                <div class="social-media" id="socialMedia">
                     <ul>
                         <li><a href="#"><i class="fa-icon fa-brands fa-facebook"></i></a></i></li>
                         <li><a href="#"><i class="fa-icon fa-brands fa-instagram"></i></a></li>
@@ -44,8 +44,8 @@
     <main>
         
         <div class="container">
-            <div class="product-detail">
-                <div class="product-images">
+            <div class="product-detail" id="productDetail">
+                <!-- <div class="product-images">
                     <div class="product-images-secondary">
                         <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="">
                         <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="">
@@ -65,11 +65,10 @@
                         657 calificaciones
                     </span>
                     <ul>
-                        <li><b>Disponibilidad:</b>En stock</li>
-                        <li><b>Marca:</b>Samsung</li>
-                        <li><b>Peso con empaque:</b>0.500 kg</li>
-                        <li><b>Producto de:</b>Amazon</li>
-                        <li><b></b></li>
+                        <li><b>Disponibilidad: </b>En stock</li>
+                        <li><b>Marca: </b>Samsung</li>
+                        <li><b>Peso con empaque: </b>0.500 kg</li>
+                        <li><b>Producto de: </b>Amazon</li>
                     </ul>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum culpa inventore, neque deserunt molestiae delectus aspernatur voluptas reprehenderit, enim magni dolore sapiente doloribus corrupti distinctio aliquam officiis rerum nam eos.
@@ -100,10 +99,67 @@
                             <input type="number" id="quantityProduct" min="1" max="99" value="1" />
                         </div>
                         <div class="call">
-                            <button class="btn btn-primary">Comprar</button>
-                            <button class="btn btn-secondary">Agregar al carrito</button>
+                            <button type="button" class="btn btn-primary">Comprar</button>
+                            <button type="button" class="btn btn-secondary">Agregar al carrito</button>
                         </div>
                     </div>
+                </div> -->
+            </div>
+
+            <div class="featured-prodcuts">
+                <h2>Productos Recomendados</h2>
+                <div class="product-container">
+                    <article class="product-card">
+                        <a class="product-source" href="./product-detail.html">
+                            <img class="product-img" src="./assets/img/mock1.jpg" alt="Mockup">
+                        </a>
+                        <div class="product-info">
+                            <span class="product-title">ipadPro</span>
+                            <span class="product-description">Silver</span>
+                
+                            <div class="product-price-block">
+                                <span class="price">$750.000</span>
+                                <span class="discount">50% Off</span>
+                            </div>
+                            <div class="product-tax-policy">
+                                Incluye impuesto País y percepción AFIP
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <a class="product-source" href="./product-detail.html">
+                            <img class="product-img" src="./assets/img/mock1.jpg" alt="Mockup">
+                        </a>
+                        <div class="product-info">
+                            <span class="product-title">ipadPro</span>
+                            <span class="product-description">Silver</span>
+                
+                            <div class="product-price-block">
+                                <span class="price">$750.000</span>
+                                <span class="discount">50% Off</span>
+                            </div>
+                            <div class="product-tax-policy">
+                                Incluye impuesto País y percepción AFIP
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <a class="product-source" href="./product-detail.html">
+                            <img class="product-img" src="./assets/img/mock1.jpg" alt="Mockup">
+                        </a>
+                        <div class="product-info">
+                            <span class="product-title">ipadPro</span>
+                            <span class="product-description">Silver</span>
+                
+                            <div class="product-price-block">
+                                <span class="price">$750.000</span>
+                                <span class="discount">50% Off</span>
+                            </div>
+                            <div class="product-tax-policy">
+                                Incluye impuesto País y percepción AFIP
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -117,6 +173,8 @@
     </footer>
 
     <script src="./scripts/links.js"></script>
+    <script src="./scripts/product.js"></script>
+    <script src="./scripts/productDetails.js"></script>
 
 </body>
 </html>

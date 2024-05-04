@@ -1,0 +1,116 @@
+const $productDetail = document.getElementById('productDetail');
+const query = location.search;
+const params = new URLSearchParams(query);
+const id = params.get('id');
+
+const handleAddProductCart = () => {
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    const productFind = products.find((product) => product.id === Number(id));
+    // console.log(productFind);
+}
+
+const getProductDetails = (paramId) => {
+    const productFind = products.find((product) => product.id === Number(paramId));
+    const imageTemplate = productImageTemplate(productFind);
+    const informationTemplate = productInformationTemplate(productFind);
+    const pricesTemplate = productPricesTemplate(productFind)
+
+    $productDetail.appendChild(imageTemplate);
+    $productDetail.appendChild(informationTemplate);
+    $productDetail.appendChild(pricesTemplate);
+}
+
+const productImageTemplate = (product) => {
+    const { name } = product;
+    const template = 
+    `
+    <div class="product-images">
+        <div class="product-images-secondary">
+            <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="IPAD PRO DEFAULT">
+            <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="IPAD PRO 3">
+            <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="IPAD PRO 2">
+            <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="IPAD PRO 1">
+        </div>
+        <div class="product-image-principal">
+            <img class="product-image-full" src="./assets/img/mock1.jpg" alt="${name}">
+        </div>
+    </div>
+    `;
+
+    return document.createRange().createContextualFragment(template);
+}
+
+const productInformationTemplate = (product) => {
+    const { name, color} = product;
+    const template = 
+    `
+    <div class="product-information">
+        <h4>Apple</h4>
+        <h3>${name}</h3>
+        <span class="qualification">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            657 calificaciones
+        </span>
+        <ul>
+            <li><b>Disponibilidad :</b>En stock</li>
+            <li><b>Color :</b>${color}</li>
+            <li><b>Peso con empaque :</b>0.500 kg</li>
+            <li><b>Producto de :</b>Amazon</li>
+        </ul>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum culpa inventore, neque deserunt molestiae delectus aspernatur voluptas reprehenderit, enim magni dolore sapiente doloribus corrupti distinctio aliquam officiis rerum nam eos.
+            Corporis quod autem doloribus voluptatem quos a, beatae ex illo sit eaque, deleniti ipsum magnam aliquam! Soluta incidunt eveniet autem tempora, asperiores laudantium officiis dolorem veniam voluptatem similique exercitationem voluptatum?
+            Ad iusto ex sequi facilis maiores inventore voluptatum aperiam? Temporibus quo ad perferendis voluptate quae ullam illo neque nesciunt iusto veritatis? Sit eveniet minima esse! Itaque harum possimus quae magni?
+        </p>
+    </div>
+    `;
+
+    return document.createRange().createContextualFragment(template);
+}
+
+const productPricesTemplate = (product) => {
+    const { discount, price } = product;
+    const template =
+    `
+    <div class="product-prices">
+        <div class="product-list-prices">
+            <p class="old-price">Precio: <span>S/. ${price}</span></p>
+            <p class="current-price">Ahorras: S/ ${(price*(discount/100))} (${discount}%)</p>
+            <p class="price">S/. ${price-(price*(discount/100))}</p>
+        </div>
+        <div class="product-shipment">
+            <div class="product-shipment__detail">
+                <i class="fa-solid fa-truck-fast"></i>
+                <p><span>Agrega el producto al carrito</span> para conocer los costos de envío</p>
+            </div>
+            <div class="product-shipment__detail">
+                <i class="fa-solid fa-truck-fast"></i>
+                <p>Recibí este producto de 5 a 10 días hábiles seleccionando <span>envío</span></p>
+            </div>
+        </div>
+        <div class="product-actions">
+            <div class="quantity">
+                <label for="quantityProduct">Cantidad:</label>
+                <input type="number" id="quantityProduct" min="1" max="99" value="1" />
+            </div>
+            <div class="call">
+                <button type="button" class="btn btn-primary">Comprar</button>
+                <button type="button" class="btn btn-secondary">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    `
+    return document.createRange().createContextualFragment(template);
+}
+
+
+// Inicialización del Arreglo vacío
+document.addEventListener('DOMContentLoaded', () => {
+    if(!(localStorage.getItem('cart'))) {
+        localStorage.setItem('cart',JSON.stringify([]))
+    }
+    getProductDetails(id);
+
+    console.l
+})
