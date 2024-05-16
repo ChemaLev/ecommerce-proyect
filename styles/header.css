@@ -34,6 +34,7 @@
 
 .social-media ul {
     display: flex;
+    position: relative;
     justify-content: end;
     gap: 20px;
 }
@@ -44,6 +45,22 @@
 
 .social-media li a .fa-icon{
     font-size: 2rem;
+}
+
+.social-media ul .qty-products {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    top: -20px;
+    right: -15px;
+    border-radius: 100%;
+    color: var(--primary);
+    font-weight: 600;
+    background-color: var(--white);
+    border: 5px solid var(--primary);
 }
 
 .header-nav ul {

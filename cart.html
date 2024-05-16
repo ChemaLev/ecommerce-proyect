@@ -45,8 +45,8 @@
 
     <section id="hero">
         <div class="hero-titles container">
-            <span class="hero-item">tecnología</span>
-            <span class="hero-item">renovada</span>
+            <span class="hero-item">mi</span>
+            <span class="hero-item">carrito</span>
         </div>
     </section>
 
@@ -54,7 +54,15 @@
     
     <main>
         <div class="container">
-            <div id="productList" class="product-container"> 
+            <div class="purchase">
+                <div class="purchase-cart" id="purchaseCart">
+                </div>
+                <div class="purchase-order">
+                    <h3>Resumen del Pedido</h3>
+                    <h4>Total: <span id="purchaseTotal">100000</span></h4>
+                    <span>Incluye impuestos Pais y percepción AFIP</span>
+                    <button type="button" class="btn btn-primary" id="btnEndPurchase">Comprar</button>
+                </div>
             </div>
         </div>
     </main>
@@ -67,6 +75,7 @@
 
     <script src="./scripts/links.js"></script>
     <script src="./scripts/product.js"></script>
+    <script src="./scripts/cart.js"></script>
 
 </body>
 </html>

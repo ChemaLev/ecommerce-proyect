@@ -3,9 +3,6 @@ const $footer = document.getElementById('footer');
 const $socialMedia = document.getElementById('socialMedia');
 const $socialMediaSelector = $socialMedia.querySelector('ul');
 
-console.log($socialMedia);
-console.log($socialMediaSelector);
-
 const menuLinks = [
     {text: 'Ofertas', to:'#'},
     {text: 'Cómo comprar', to:'#'},
@@ -86,6 +83,7 @@ for (const links in footerLinks) {
 document.addEventListener('DOMContentLoaded', () => {
     if(JSON.parse(localStorage.getItem('cart'))?.length){
         const quantityProducts = document.createElement('div');
+        quantityProducts.className = 'qty-products';
         quantityProducts.textContent = JSON.parse(localStorage.getItem('cart')).length;
         $socialMediaSelector.appendChild(quantityProducts);
     }

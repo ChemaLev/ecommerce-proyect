@@ -9,12 +9,12 @@
 .product-images {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 5%;
 }
 
 .product-image-principal {
-    width: 90%;
-    display: block;
+    width: 85%;
+    height: 380px;
 }
 
 .product-images-secondary {
@@ -24,8 +24,18 @@
     gap: 10px;
 }
 
-.product-image-full, .product-image-mini{
+.product-image-full {
+    max-width: 300px;
     width: 100%;
+    height: 380px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+.product-image-mini {
+    cursor: pointer;
+    width: 100%
 }
 
 .product-information h4 {
@@ -62,8 +72,25 @@ span.qualification {
 
 .product-prices {
     background-color: var(--gray);
+    position: relative;
     padding: 15px;
     height: fit-content;
+}
+
+.btn-favorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: var(--white);
 }
 
 .product-list-prices {
@@ -129,7 +156,7 @@ span.qualification {
     gap: 5px;
 }
 
-.call .btn {
+.btn {
     display: block;
     width: 100%;
     padding: 10px 0;
@@ -139,12 +166,12 @@ span.qualification {
     cursor: pointer;
 }
 
-.call .btn-primary {
+.btn-primary {
     background-color: var(--primary);
     color: var(--white);
 }
 
-.call .btn-secondary {
+.btn-secondary {
     color: var(--primary);
     border: 1px solid var(--primary);
 }

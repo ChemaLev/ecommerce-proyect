@@ -3,17 +3,78 @@ const query = location.search;
 const params = new URLSearchParams(query);
 const id = params.get('id');
 
-const handleAddProductCart = () => {
+const changeImage = (event) => {
+    const $principalImage = document.getElementById('principalImage');
+    if(event.target.tagName === 'IMG'){
+        const newImage = event.target.src;
+        const newAlt = event.target.alt;
+        $principalImage.setAttribute('src', newImage);
+        $principalImage.setAttribute('alt', newAlt);
+    }
+}
+
+const handleAddProductToCart = () => {
     const cart = JSON.parse(localStorage.getItem('cart'));
     const productFind = products.find((product) => product.id === Number(id));
-    // console.log(productFind);
+    const qtyProduct =  document.getElementById('quantityProduct');
+    const { color, name, price, image } = productFind;
+    const newProduct = {
+       id,
+       color,
+       name,
+       price,
+       image,
+       quantityProduct: Number(qtyProduct.value)
+    }
+
+    const existingProductIndex = cart.findIndex(product => product.id === id);
+
+    if(existingProductIndex !== -1) {
+        cart[existingProductIndex].quantityProduct += newProduct.quantityProduct;
+    }else {
+        cart.push(newProduct);
+    }
+
+    alert('Se agregó el producto correspondiente');
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+const handleProductToFavoriteList = () => {
+    const favorite = JSON.parse(localStorage.getItem('favorite'));
+    const btnFav = document.getElementById('btnFavorite');
+    const btnIcon = btnFav.querySelector('#iconFavorite');
+    const classIcon = btnIcon.classList;
+    const productFind = products.find(product => product.id === Number(id));
+    const { name, price, image } = productFind;
+    const newProductFav = {
+        id,
+        name,
+        price,
+        image
+    }
+
+    const existingProductFavIndex = favorite.findIndex(product => product.id === id);
+
+    if(existingProductFavIndex !== -1){
+        favorite.splice(existingProductFavIndex,1);
+        classIcon.replace('fa-solid','fa-regular');
+    }else{
+        favorite.push(newProductFav);
+        classIcon.replace('fa-regular','fa-solid');
+    }
+
+    localStorage.setItem('favorite',JSON.stringify(favorite));
 }
 
 const getProductDetails = (paramId) => {
     const productFind = products.find((product) => product.id === Number(paramId));
+    const arrayFavorite = JSON.parse(localStorage.getItem('favorite'));;
     const imageTemplate = productImageTemplate(productFind);
     const informationTemplate = productInformationTemplate(productFind);
-    const pricesTemplate = productPricesTemplate(productFind)
+    const pricesTemplate = productPricesTemplate(productFind, arrayFavorite);
+
+    console.log(pricesTemplate)
 
     $productDetail.appendChild(imageTemplate);
     $productDetail.appendChild(informationTemplate);
@@ -25,14 +86,14 @@ const productImageTemplate = (product) => {
     const template = 
     `
     <div class="product-images">
-        <div class="product-images-secondary">
-            <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="IPAD PRO DEFAULT">
-            <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="IPAD PRO 3">
-            <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="IPAD PRO 2">
-            <img class="product-image-mini" src="./assets/img/mock2.jpg" alt="IPAD PRO 1">
+        <div class="product-images-secondary" id="thumbailImages" onclick="changeImage(event)">
+            <img class="product-image-mini" src="./assets/img/ipad-1.jpg" alt="IPAD PRO DEFAULT">
+            <img class="product-image-mini" src="./assets/img/ipad-2.jpg" alt="IPAD PRO 3">
+            <img class="product-image-mini" src="./assets/img/ipad-3.jpg" alt="IPAD PRO 2">
+            <img class="product-image-mini" src="./assets/img/ipad-4.jpg" alt="IPAD PRO 1">
         </div>
         <div class="product-image-principal">
-            <img class="product-image-full" src="./assets/img/mock1.jpg" alt="${name}">
+            <img class="product-image-full" id="principalImage" src="./assets/img/ipad-1.jpg" alt="${name}">
         </div>
     </div>
     `;
@@ -69,11 +130,16 @@ const productInformationTemplate = (product) => {
     return document.createRange().createContextualFragment(template);
 }
 
-const productPricesTemplate = (product) => {
+const productPricesTemplate = (product, productFav) => {
+    const prod = productFav.find(element => element.id === id);
+    const btnFavorite = `<i id="iconFavorite" class="fa-solid fa-heart"></i>`;
+    const btnNotFavorite = `<i id="iconFavorite" class="fa-regular fa-heart"></i>`;
+    
     const { discount, price } = product;
     const template =
     `
     <div class="product-prices">
+        <button id="btnFavorite" class="btn-favorite" onclick="handleProductToFavoriteList()">${prod ? btnFavorite : btnNotFavorite}</button>
         <div class="product-list-prices">
             <p class="old-price">Precio: <span>S/. ${price}</span></p>
             <p class="current-price">Ahorras: S/ ${(price*(discount/100))} (${discount}%)</p>
@@ -96,7 +162,7 @@ const productPricesTemplate = (product) => {
             </div>
             <div class="call">
                 <button type="button" class="btn btn-primary">Comprar</button>
-                <button type="button" class="btn btn-secondary">Agregar al carrito</button>
+                <button type="button" class="btn btn-secondary" onclick="handleAddProductToCart()">Agregar al carrito</button>
             </div>
         </div>
     </div>
@@ -112,5 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     getProductDetails(id);
 
-    console.l
+    if(!(localStorage.getItem('favorite'))){
+        localStorage.setItem('favorite',JSON.stringify([]))
+    }
 })

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Virtual</title>
+    <title>Favorite List</title>
 
     <link rel="stylesheet" href="./styles/styles.css">
     
@@ -12,12 +12,12 @@
 <body>
     
     <!-- Estilos de la barra de navegación -->
-
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="./index.html"><img src="../assets/tiendamia-logo.svg" width="218" alt="Logo store" />
+                    <a href="./index.html">
+                        <img src="../assets/tiendamia-logo.svg" width="218" alt="Logo store" />
                     </a>
                 </div>
                 <div class="form">
@@ -42,19 +42,20 @@
     </header>
 
     <!-- Estilos de la sección del hero -->
-
     <section id="hero">
         <div class="hero-titles container">
-            <span class="hero-item">tecnología</span>
-            <span class="hero-item">renovada</span>
+            <span class="hero-item">mi</span>
+            <span class="hero-item">carrito</span>
         </div>
     </section>
 
     <!-- Estilos del cuerpo y en particular de la tarjeta del producto -->
-    
     <main>
         <div class="container">
-            <div id="productList" class="product-container"> 
+            <div class="favorite-list">
+                <div id="favoriteProducts" class="favorite-products">
+                    
+                </div>
             </div>
         </div>
     </main>
@@ -67,6 +68,7 @@
 
     <script src="./scripts/links.js"></script>
     <script src="./scripts/product.js"></script>
+    <script src="./scripts/productFavorite.js"></script>
 
 </body>
 </html>
